@@ -14,8 +14,8 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
   app.use(bodyParser.json());
 
   app.get("/filteredimage", async (req, res) => {
-
-    let { image_url } = req.query;
+    
+    let image_url: string = req.query.image_url;
 
     if (image_url === undefined) {
       res.send(">> ERROR invalid param, expected image_url ");
